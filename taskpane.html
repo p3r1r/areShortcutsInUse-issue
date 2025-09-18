@@ -25,7 +25,7 @@
 
     function sayHello() {
 
-        var shortcutsInUse = Office.actions.areShortcutsInUse('Ctrl+N');
+        var shortcutsInUse = Office.actions.areShortcutsInUse(['Ctrl+N']);
         console.log(shortcutsInUse);
 
         return Word.run((context) => {
