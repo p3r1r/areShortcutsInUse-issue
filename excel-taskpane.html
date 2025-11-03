@@ -1,0 +1,38 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+
+<body>
+    <p>This Excel button will replace shortcuts and check for areShortcutsInUse.</p>
+    <div id="output"></div>
+    <button id="firstButton">Ctrl+Shift+Alt+N to Ctrl+Shift+Alt+B</button>
+    <button id="secondButton">Ctrl+Shift+Alt+B to Ctrl+Shift+Alt+N</button>
+</body>
+
+<script>
+    Office.onReady((info) => {
+        if (info.host === Office.HostType.Excel) {
+            document.getElementById("firstButton").onclick = firstButton;
+            document.getElementById("secondButton").onclick = secondButton;
+        }
+    });
+
+    function firstButton() {
+        var shortcutsInUse = Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+B']);
+        document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
+        Office.actions.replaceShortcuts({ ["action1"]: "Ctrl+Shift+Alt+B"});
+    }
+
+    function secondButton() {
+        var shortcutsInUse = Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+N']);
+        document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
+        Office.actions.replaceShortcuts({ ["action1"]: "Ctrl+Shift+Alt+N"});
+    };
+</script>
+
+</html>
