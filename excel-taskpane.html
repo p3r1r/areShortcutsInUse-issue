@@ -10,8 +10,8 @@
 <body>
     <p>This Excel button will replace shortcuts and check for areShortcutsInUse.</p>
     <div id="output"></div>
-    <button id="firstButton">Ctrl+Shift+Alt+N to Ctrl+Shift+Alt+B</button>
-    <button id="secondButton">Ctrl+Shift+Alt+B to Ctrl+Shift+Alt+N</button>
+    <button id="firstButton">Ctrl+Shift+Alt+F to Ctrl+Shift+Alt+I</button>
+    <button id="secondButton">Ctrl+Shift+Alt+I to Ctrl+Shift+Alt+F</button>
 </body>
 
 <script>
@@ -23,15 +23,15 @@
     });
 
     async function firstButton() {
-        const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+B']);
+        const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+I']);
         document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
-        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+B" });
+        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+I" });
     }
 
     async function secondButton() {
-        const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+N']);
+        const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+F']);
         document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
-        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+N" });
+        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+F" });
     }
 </script>
 

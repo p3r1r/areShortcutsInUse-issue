@@ -15,13 +15,13 @@
         {
             "action": "action1",
             "key": {
-                "default": "Ctrl+Shift+Alt+N"
+                "default": "Ctrl+Shift+Alt+f"
             }
         },
         {
             "action": "action2",
             "key": {
-                "default": "Ctrl+Shift+Alt+M"
+                "default": "Ctrl+Shift+Alt+G"
             }
         }
     ]
