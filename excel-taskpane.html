@@ -22,17 +22,17 @@
         }
     });
 
-    function firstButton() {
-        var shortcutsInUse = Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+B']);
+    async function firstButton() {
+        const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+B']);
         document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
-        Office.actions.replaceShortcuts({ ["action1"]: "Ctrl+Shift+Alt+B"});
+        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+B" });
     }
 
-    function secondButton() {
-        var shortcutsInUse = Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+N']);
+    async function secondButton() {
+        const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+N']);
         document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
-        Office.actions.replaceShortcuts({ ["action1"]: "Ctrl+Shift+Alt+N"});
-    };
+        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+N" });
+    }
 </script>
 
 </html>
