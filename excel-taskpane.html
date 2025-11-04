@@ -25,13 +25,13 @@
     async function firstButton() {
         const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+I']);
         document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
-        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+I" });
+        await Office.actions.replaceShortcuts({ action1: "Ctrl+Shift+Alt+I" });
     }
 
     async function secondButton() {
         const shortcutsInUse = await Office.actions.areShortcutsInUse(['Ctrl+Shift+Alt+F']);
         document.getElementById("output").innerHTML = `Shortcuts in use: ${JSON.stringify(shortcutsInUse)}`;
-        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+F" });
+        await Office.actions.replaceShortcuts({ action1: "Ctrl+Shift+Alt+F" });
     }
 </script>
 
