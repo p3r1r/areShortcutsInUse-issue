@@ -85,5 +85,5 @@
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
-  <ExtendedOverrides Url="https://p3r1r.github.io/areShortcutsInUse-issue/shortcuts.json"></ExtendedOverrides>
+  <ExtendedOverrides Url="https://p3r1r.github.io/areShortcutsInUse-issue/mac-shortcuts.json"></ExtendedOverrides>
 </OfficeApp>
