@@ -29,7 +29,7 @@
     });
 
     async function firstButton() {
-        await Office.actions.replaceShortcuts({ "action1": "Ctrl+Shift+Alt+I" });
+        await Office.actions.replaceShortcuts( { action1: "Ctrl+Shift+Alt+I" });
 
         const userShortcuts = await Office.actions.getShortcuts();
 
