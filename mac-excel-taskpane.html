@@ -10,7 +10,7 @@
 <body>
     <p>This Excel button will replace shortcuts and check for areShortcutsInUse.</p>
     <div id="output"></div>
-    <button id="firstButton">Change to Ctrl+Shift+Alt+I</button>
+    <button id="firstButton">Change to Ctrl+Shift+Options+I</button>
 </body>
 
 <script>
@@ -29,7 +29,7 @@
     });
 
     async function firstButton() {
-        await Office.actions.replaceShortcuts( { action1: "Ctrl+Shift+Alt+I" });
+        await Office.actions.replaceShortcuts( { action1: "Ctrl+Shift+Options+I" });
 
         const userShortcuts = await Office.actions.getShortcuts();
 
